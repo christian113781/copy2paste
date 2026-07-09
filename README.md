@@ -1,6 +1,5 @@
 # Copy2Paste
 
-![Copy2Paste banner](assets/banner.png)
 
 A browser extension that lets you drag-select any area of a webpage —
 like Lightshot — and copy what's there straight to your clipboard, as
@@ -62,7 +61,7 @@ instead of silently failing.
 
 ## Usage
 
-<img src="assets/popup-mockup.png" alt="Copy2Paste toolbar menu" width="320" align="right" />
+<!-- <img src="assets/popup-mockup.png" alt="Copy2Paste toolbar menu" width="320" align="right" /> -->
 
 Click the toolbar icon to open the menu, or skip it entirely with a
 keyboard shortcut:
@@ -137,5 +136,4 @@ happen locally in your browser; nothing is ever uploaded anywhere.
 
 ## License
 
-Add whichever license you'd like this repo to carry (e.g. MIT) — none
-is specified yet.
+---------------
