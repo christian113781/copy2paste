@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Copy2Paste OCR (offscreen)</title>
+  <!-- This page is never shown to the user. Chrome's offscreen document API
+       gives us a real page context (with Worker + WASM support) that a
+       Manifest V3 service worker can't provide on its own, so Tesseract.js
+       can run here instead. -->
+  <script src="vendor/tesseract/tesseract.min.js"></script>
+</head>
+<body>
+  <script src="offscreen.js"></script>
+</body>
+</html>

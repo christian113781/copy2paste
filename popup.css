@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  width: 240px;
+  font: 14px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #1f2430;
+}
+
+.menu {
+  padding: 4px 0;
+}
+
+.menu-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px 10px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid #eef0f4;
+  margin-bottom: 4px;
+}
+
+.menu-header img {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  text-decoration: none;
+  font: inherit;
+  color: #1f2430;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #f2f5fb;
+}
+
+.icon {
+  width: 20px;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  height: 1px;
+  background: #eef0f4;
+  margin: 4px 0;
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Copy2Paste Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="options.css" />
+  <link rel="stylesheet" href="feedback.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <img src="icons/icon48.png" alt="" />
+      <h1>Send Feedback</h1>
+    </div>
+
+    <p>Found a bug, or want something added? This goes straight to the
+      developer &mdash; no account needed.</p>
+
+    <form id="feedback-form">
+      <div class="field-group">
+        <div class="label">Type</div>
+        <div class="type-options">
+          <label class="type-option">
+            <input type="radio" name="type" value="bug" checked />
+            <span>&#128027; Bug report</span>
+          </label>
+          <label class="type-option">
+            <input type="radio" name="type" value="feature" />
+            <span>&#10024; Feature request</span>
+          </label>
+          <label class="type-option">
+            <input type="radio" name="type" value="general" />
+            <span>&#128172; General feedback</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <div class="label" id="message-label">What's the bug?</div>
+        <textarea id="message" rows="6" required placeholder="Be as specific as you can \u2014 what happened, and what you expected instead."></textarea>
+      </div>
+
+      <button type="submit" id="submit-btn">Send Feedback</button>
+      <div id="status" class="status" role="status"></div>
+    </form>
+  </div>
+  <script src="feedback.js"></script>
+</body>
+</html>

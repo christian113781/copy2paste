@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Copy2Paste Help</title>
+  <link rel="stylesheet" href="options.css" />
+  <style>
+    h2 { font-size: 15px; margin: 24px 0 8px; }
+    ol, ul { margin: 0 0 12px; padding-left: 22px; }
+    li { margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <img src="icons/icon48.png" alt="" />
+      <h1>Copy2Paste Help</h1>
+    </div>
+
+    <p>Drag a box over any part of a page and it's copied to your
+      clipboard &mdash; either as plain text (default, and it now also
+      reads text baked into images inside your selection) or as an image,
+      whichever mode you pick.</p>
+
+    <h2>How to use it</h2>
+    <ol>
+      <li>Click the toolbar icon and choose <strong>Start selection
+        (text)</strong> or <strong>Start selection (image)</strong> &mdash;
+        or just press the matching keyboard shortcut, which skips the menu
+        entirely.</li>
+      <li>Your cursor becomes a crosshair. Click and drag a box over the
+        area you want.</li>
+      <li>Release the mouse &mdash; it's copied. Paste it anywhere with
+        Ctrl+V / Cmd+V (as text in text mode, as an image in image mode).</li>
+      <li>Press <kbd>Esc</kbd> any time before releasing to cancel.</li>
+    </ol>
+
+    <h2>Reading text inside images (OCR)</h2>
+    <p>If your text-mode selection includes a photo, screenshot, banner,
+      <strong>video</strong>, or anything else with baked-in text,
+      Copy2Paste automatically runs it through a local OCR engine and
+      appends whatever it reads to the copied text. This only kicks in
+      when an image or video is actually inside the selection, so ordinary
+      text selections stay instant. When it does run, a small note
+      ("Reading text in image&hellip;") appears for a few seconds while it
+      works. Everything happens on your device
+      &mdash; the image is never sent anywhere.</p>
+    <p>For video, it's reading a single snapshot of whatever frame is
+      showing the instant you release the drag &mdash; pause the video
+      first if you're after specific on-screen text, since a moving frame
+      can come out blurry. DRM-protected video (most paid movies/shows)
+      renders as black in screenshots by design, so OCR won't find
+      anything there.</p>
+
+    <h2>Keyboard shortcuts</h2>
+    <p>Defaults: <kbd>Alt</kbd>+<kbd>0</kbd> for text,
+      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd> for image,
+      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> for the color picker. All
+      three trigger their action immediately without opening the menu. To
+      change any of them, use <strong>Settings</strong> in the popup, or go
+      to <code>chrome://extensions/shortcuts</code> directly.</p>
+
+    <h2>Pick a Color (Page)</h2>
+    <p>Choose <strong>Pick a Color (Page)</strong> from the popup (or press
+      the shortcut) and a small circle appears that follows your mouse,
+      filled with a live preview of whatever pixel it's over. Move it
+      around the page, then click your target to copy that color's hex
+      code &mdash; the copy confirmation shows a swatch of what you picked.
+      Press <kbd>Esc</kbd> any time to cancel without picking. It works
+      by screenshotting the current tab and sampling pixels from that, so
+      it can read anything rendered on the page, including video frames
+      &mdash; but only within this browser tab, not other windows or apps
+      on your screen.</p>
+
+    <h2>Webpage Color Analyzer</h2>
+    <p>Choose <strong>Webpage Color Analyzer</strong> from the popup to scan
+      the whole page for colors actually in use (backgrounds, text, borders).
+      A panel appears in the top-right listing swatches by how often each
+      color shows up &mdash; click any swatch to copy its hex code. Click
+      the panel's <strong>&times;</strong> or press <kbd>Esc</kbd> to close
+      it.</p>
+
+    <h2>If nothing happens when you click</h2>
+    <p>Extensions can't run on Chrome's own internal pages &mdash;
+      <code>chrome://extensions</code>, a New Tab page, or the Chrome Web
+      Store. If you try there, the toolbar icon shows a red <strong>!</strong>
+      badge for a few seconds. Switch to a normal website and try again.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>In text mode, DOM text matching is by page element, not exact
+        character offset, so dragging over half a paragraph still grabs
+        that whole paragraph's text.</li>
+      <li>OCR reads whatever's visually in the image, so quality depends on
+        resolution and clarity &mdash; small or blurry text may come out
+        imperfect or blank, same as any OCR tool.</li>
+      <li>The color picker samples from a screenshot of the current tab,
+        so it works consistently across browsers and operating systems
+        &mdash; the trade-off is it can't reach outside the browser window
+        to other apps or your desktop.</li>
+    </ul>
+  </div>
+</body>
+</html>
