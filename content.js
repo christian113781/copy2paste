@@ -430,6 +430,33 @@
     // the dragged rectangle by a reasonable margin, and stitch them back
     // together in reading order with sensible line breaks.
     function extractTextInArea(selRect) {
+      // Many sites keep invisible duplicate text in the DOM \u2014 for
+      // tooltips, screen-reader labels, or content mid-transition \u2014 using
+      // opacity:0, visibility:hidden, or aria-hidden rather than actually
+      // removing it. These still report a real size/position, so without
+      // this check they'd get swept in right alongside the visible text
+      // sitting in the same spot, producing duplicated output.
+      const hiddenCache = new WeakMap();
+      function isHiddenAncestor(el) {
+        if (hiddenCache.has(el)) return hiddenCache.get(el);
+        const cs = getComputedStyle(el);
+        const hidden =
+          cs.visibility === "hidden" ||
+          cs.display === "none" ||
+          parseFloat(cs.opacity) < 0.05 ||
+          el.getAttribute("aria-hidden") === "true";
+        hiddenCache.set(el, hidden);
+        return hidden;
+      }
+      function isNodeVisible(textNode) {
+        let el = textNode.parentElement;
+        while (el && el !== document.body) {
+          if (isHiddenAncestor(el)) return false;
+          el = el.parentElement;
+        }
+        return true;
+      }
+
       const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
         acceptNode(node) {
           if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
@@ -437,6 +464,7 @@
           if (!parent) return NodeFilter.FILTER_REJECT;
           if (parent.closest("#c2p-overlay, #c2p-rect, #c2p-hint")) return NodeFilter.FILTER_REJECT;
           if (parent.closest("script, style, noscript")) return NodeFilter.FILTER_REJECT;
+          if (!isNodeVisible(node)) return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         },
       });

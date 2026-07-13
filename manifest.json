@@ -14,15 +14,13 @@
   },
   "commands": {
     "toggle-selection-text": {
-      "suggested_key": { "default": "Alt+0" },
+
       "description": "Start Copy2Paste text selection"
     },
     "toggle-selection-image": {
-      "suggested_key": { "default": "Alt+Shift+0" },
       "description": "Start Copy2Paste image selection"
     },
     "toggle-color-picker": {
-      "suggested_key": { "default": "Alt+Shift+C" },
       "description": "Pick a color from the page"
     }
   },

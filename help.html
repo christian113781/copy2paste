@@ -26,8 +26,8 @@
     <ol>
       <li>Click the toolbar icon and choose <strong>Start selection
         (text)</strong> or <strong>Start selection (image)</strong> &mdash;
-        or just press the matching keyboard shortcut, which skips the menu
-        entirely.</li>
+        or press a keyboard shortcut if you've set one (see below), which
+        skips the menu entirely.</li>
       <li>Your cursor becomes a crosshair. Click and drag a box over the
         area you want.</li>
       <li>Release the mouse &mdash; it's copied. Paste it anywhere with
@@ -53,16 +53,16 @@
       anything there.</p>
 
     <h2>Keyboard shortcuts</h2>
-    <p>Defaults: <kbd>Alt</kbd>+<kbd>0</kbd> for text,
-      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>0</kbd> for image,
-      <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> for the color picker. All
-      three trigger their action immediately without opening the menu. To
-      change any of them, use <strong>Settings</strong> in the popup, or go
-      to <code>chrome://extensions/shortcuts</code> directly.</p>
+    <p>No shortcuts are assigned by default &mdash; every action is
+      always available from the toolbar menu. If you'd like a keyboard
+      shortcut for text selection, image selection, or the color picker,
+      open <strong>Settings</strong> from the popup and click "Set
+      shortcuts," which takes you to Chrome's own shortcut editor at
+      <code>chrome://extensions/shortcuts</code>.</p>
 
     <h2>Pick a Color (Page)</h2>
-    <p>Choose <strong>Pick a Color (Page)</strong> from the popup (or press
-      the shortcut) and a small circle appears that follows your mouse,
+    <p>Choose <strong>Pick a Color (Page)</strong> from the popup (or
+      press its shortcut if you've set one) and a small circle appears that follows your mouse,
       filled with a live preview of whatever pixel it's over. Move it
       around the page, then click your target to copy that color's hex
       code &mdash; the copy confirmation shows a swatch of what you picked.
@@ -80,6 +80,13 @@
       the panel's <strong>&times;</strong> or press <kbd>Esc</kbd> to close
       it.</p>
 
+    <h2>Feedback</h2>
+    <p>Choose <strong>Feedback</strong> from the popup to report a bug,
+      request a feature, or send general feedback. It's sent directly to
+      the developer, along with which page you were on and your browser
+      info to help with debugging &mdash; an email is optional if you'd
+      like a reply.</p>
+
     <h2>If nothing happens when you click</h2>
     <p>Extensions can't run on Chrome's own internal pages &mdash;
       <code>chrome://extensions</code>, a New Tab page, or the Chrome Web
@@ -88,9 +95,10 @@
 
     <h2>Good to know</h2>
     <ul>
-      <li>In text mode, DOM text matching is by page element, not exact
-        character offset, so dragging over half a paragraph still grabs
-        that whole paragraph's text.</li>
+      <li>Text mode matches word by word, using each word's actual
+        on-screen center point &mdash; so a word right on the edge of your
+        drag box can go either way, similar to how native browser text
+        selection behaves at line boundaries.</li>
       <li>OCR reads whatever's visually in the image, so quality depends on
         resolution and clarity &mdash; small or blurry text may come out
         imperfect or blank, same as any OCR tool.</li>

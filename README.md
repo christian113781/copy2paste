@@ -1,5 +1,6 @@
 # Copy2Paste
 
+![Copy2Paste banner](assets/banner.png)
 
 A browser extension that lets you drag-select any area of a webpage —
 like Lightshot — and copy what's there straight to your clipboard, as
@@ -23,7 +24,8 @@ tracking — everything runs locally in your browser.
 - **Webpage Color Analyzer** — scans the whole rendered page and lists
   every color actually in use (backgrounds, text, borders) as clickable,
   copyable swatches, sorted by frequency.
-- **Keyboard shortcuts** for everything, fully remappable.
+- **Optional keyboard shortcuts** for every action, assignable per-user
+  (none set by default).
 - **Local OCR** via [Tesseract.js](https://github.com/naptha/tesseract.js),
   bundled with the extension — no server, nothing leaves your machine.
 - **Feedback form** built in — Bug report / Feature request / General
@@ -61,21 +63,21 @@ instead of silently failing.
 
 ## Usage
 
-<!-- <img src="assets/popup-mockup.png" alt="Copy2Paste toolbar menu" width="320" align="right" /> -->
+<img src="assets/popup-mockup.png" alt="Copy2Paste toolbar menu" width="320" align="right" />
 
-Click the toolbar icon to open the menu, or skip it entirely with a
-keyboard shortcut:
+Click the toolbar icon to open the menu — no keyboard shortcuts are set
+by default, so this always works with zero setup. If you want faster
+access to any action, assign your own shortcut from **Settings** (which
+links directly to Chrome's shortcut editor at
+`chrome://extensions/shortcuts`):
 
-| Action | Default shortcut |
+| Action | Shortcut |
 |---|---|
-| Start selection (text) | `Alt+0` |
-| Start selection (image) | `Alt+Shift+0` |
-| Pick a Color (Page) | `Alt+Shift+C` |
+| Start selection (text) | *(none by default — set your own)* |
+| Start selection (image) | *(none by default — set your own)* |
+| Pick a Color (Page) | *(none by default — set your own)* |
 
-Drag a box, release to copy, `Esc` to cancel anytime. Shortcuts are
-remappable from the extension's **Settings** page (right-click the
-toolbar icon → Options), which links directly to Chrome's shortcut
-editor at `chrome://extensions/shortcuts`.
+Drag a box, release to copy, `Esc` to cancel anytime.
 
 <br clear="right"/>
 
@@ -136,4 +138,5 @@ happen locally in your browser; nothing is ever uploaded anywhere.
 
 ## License
 
----------------
+Add whichever license you'd like this repo to carry (e.g. MIT) — none
+is specified yet.

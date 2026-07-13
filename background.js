@@ -5,8 +5,7 @@
 const RESTRICTED_URL_PATTERN =
   /^(chrome|edge|about|chrome-extension|extension|moz-extension|devtools):\/\/|^https:\/\/chrome\.google\.com\/webstore|^https:\/\/chromewebstore\.google\.com/i;
 
-const DEFAULT_TITLE =
-  "Copy2Paste \u2014 click for options, or use a shortcut (default Alt+0 text / Alt+Shift+0 image)";
+const DEFAULT_TITLE = "Copy2Paste \u2014 click for options, or set a shortcut in Settings";
 
 // content.js only *defines* window.__c2pStart the first time it's injected;
 // calling it again with executeScript's `func` triggers the actual overlay,
